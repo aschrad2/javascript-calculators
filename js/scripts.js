@@ -26,4 +26,11 @@ $(document).ready(function() {
     var result = add(number1, number2);
     $("#output").text(result);
   });
+
+  $("#one").click(function(event) {
+    // debugger;
+    event.preventDefault();
+    response = "1";
+    $("#numberCounter").text(response)
+  });
 });
