@@ -36,4 +36,10 @@ $(document).ready(function() {
     console.log($(this).data('calc'));
   });
 
+// Next implementation is getting the backend functionality of the calculator to actually work. To do this, I need to save
+// save each number entered as a string then concatenate it. Keep concenating, until an operator function is clicked.
+// At that
+
+
+
 });
