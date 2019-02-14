@@ -30,13 +30,10 @@ $(document).ready(function() {
 // We're attaching parameters to the html elements  and then we're grabbing them using the jQuery. We're targeting this instance of the clicked
 // and we're grabbing the value associated with that very click. Data('calc') in jQuery correlates to data-calc="1".
 // Uses a click handler to output the number 1 when the button 1 is clicked
+// debugger;
   $(".calcbutton").click(function(event) {
-    // debugger;
     event.preventDefault();
-    response = "1";
-
     console.log($(this).data('calc'));
-    $("#numberCounter").text(response)
   });
 
 });
