@@ -1,5 +1,7 @@
 // This is the business (or back-end) logic:
 
+var calculatorDisplay = $('#input');
+
 var add = function(number1, number2) {
   return number1 + number2;
 };
@@ -19,6 +21,8 @@ var divide = function(number1, number2) {
 // Everything below this line is the user interface (or front-end) logic:
 
 $(document).ready(function() {
+  var calculatorDisplay = $('#input');
+
   $("form#add").submit(function(event) {
     event.preventDefault();
     var number1 = parseInt($("#add1").val());
@@ -32,8 +36,11 @@ $(document).ready(function() {
 // Uses a click handler to output the number 1 when the button 1 is clicked
 // debugger;
   $(".calcbutton").click(function(event) {
-    var val = $(this).text();
-    $('#input').val(val);
+    var clickedNumber = $(this).text();
+
+    var displayNumber = calculatorDisplay.val() + clickedNumber;
+    console.log(displayNumber);
+    calculatorDisplay.val(displayNumber);
   });
 
 
