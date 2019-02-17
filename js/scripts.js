@@ -25,10 +25,9 @@ $(document).ready(function() {
 
   $("form#add").submit(function(event) {
     event.preventDefault();
-    var number1 = parseInt($("#add1").val());
-    var number2 = parseInt($("#add2").val());
-    var result = add(number1, number2);
-    $("#output").text(result);
+
+    var displayNumber = calculatorDisplay.val();
+    $("#output").text(displayNumber);
   });
 
 // We're attaching parameters to the html elements  and then we're grabbing them using the jQuery. We're targeting this instance of the clicked
@@ -43,8 +42,9 @@ $(document).ready(function() {
     calculatorDisplay.val(displayNumber);
   });
 
+// clear button
 
-
+// when Calculate button is pressed, it runs the calculation and outputs the number
 
 // Next implementation is getting the backend functionality of the calculator to actually work. To do this, I need to save
 // save each number entered as a string then concatenate it. Keep concenating, until an operator function is clicked.
