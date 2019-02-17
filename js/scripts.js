@@ -32,9 +32,12 @@ $(document).ready(function() {
 // Uses a click handler to output the number 1 when the button 1 is clicked
 // debugger;
   $(".calcbutton").click(function(event) {
-    event.preventDefault();
-    console.log($(this).data('calc'));
+    var val = $(this).text();
+    $('#input').val(val);
   });
+
+
+
 
 // Next implementation is getting the backend functionality of the calculator to actually work. To do this, I need to save
 // save each number entered as a string then concatenate it. Keep concenating, until an operator function is clicked.
