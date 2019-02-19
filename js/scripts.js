@@ -1,5 +1,7 @@
 // This is the business (or back-end) logic:
-
+var number1;
+var number2;
+var operatorCalled;
 var calculatorDisplay = $('#input');
 
 var add = function(number1, number2) {
@@ -30,13 +32,18 @@ $(document).ready(function() {
     $("#output").text(displayNumber);
   });
 
+  $(".operatorbutton").click(function(event) {
+    // number1 = getElementById('input').value;
+    document.getElementById('input').value = '';
+  })
+
+
 // We're attaching parameters to the html elements  and then we're grabbing them using the jQuery. We're targeting this instance of the clicked
 // and we're grabbing the value associated with that very click. Data('calc') in jQuery correlates to data-calc="1".
 // Uses a click handler to output the number 1 when the button 1 is clicked
 // debugger;
   $(".calcbutton").click(function(event) {
     var clickedNumber = $(this).text();
-
     var displayNumber = calculatorDisplay.val() + clickedNumber;
     console.log(displayNumber);
     calculatorDisplay.val(displayNumber);
