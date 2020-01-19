@@ -46,6 +46,7 @@ $(document).ready(function() {
     var clickedNumber = $(this).text();
     var displayNumber = calculatorDisplay.val() + clickedNumber;
     console.log(displayNumber);
+    // alert(`${calculatorDisplay.val()} + ${clickedNumber}`)
     calculatorDisplay.val(displayNumber);
   });
 
