@@ -25,7 +25,7 @@ var divide = function(number1, number2) {
 $(document).ready(function() {
   var calculatorDisplay = $('#input');
 
-  $("form#add").submit(function(event) {
+  $("form#calculator-form").submit(function(event) {
     event.preventDefault();
 
     var displayNumber = calculatorDisplay.val();
@@ -48,6 +48,26 @@ $(document).ready(function() {
     console.log(displayNumber);
     calculatorDisplay.val(displayNumber);
   });
+
+  // $(".operandbutton").click(function(event) {
+  //   var clickedOperand = $(this).text();
+  //   var displayedOperand = calculatorDisplay.val() + clickedOperand;
+  //   console.log(displayedOperand);
+  //   calculatorDisplay.val(displayNumber);
+  // })
+
+  $(".operatorbutton").click(function(event) {
+    var clickedOperator = $(this).text();
+    var displayOperator = calculatorDisplay.val() + clickedOperator;
+    console.log(displayOperator);
+    calculatorDisplay.val(displayOperator);
+  })
+
+  $("#clear").click(function(event) {
+    document.getElementById("calculator-form").reset();
+  })
+
+
 
 // clear button
 
