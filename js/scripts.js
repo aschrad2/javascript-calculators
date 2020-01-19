@@ -20,8 +20,20 @@ var divide = function(number1, number2) {
   return number1 / number2;
 };
 
-// Everything below this line is the user interface (or front-end) logic:
+let firstNum = [];
+let secondNum = [];
+let operator;
 
+function returnResult(num1, num2, operator) {
+  if (operator === "add") {
+    //result = $("#output").text(num1 + num2);
+    console.log(num1 + num2);
+
+  }
+};
+
+
+// Everything below this line is the user interface (or front-end) logic:
 $(document).ready(function() {
   var calculatorDisplay = $('#input');
 
@@ -37,18 +49,52 @@ $(document).ready(function() {
     document.getElementById('input').value = '';
   })
 
-
 // We're attaching parameters to the html elements  and then we're grabbing them using the jQuery. We're targeting this instance of the clicked
 // and we're grabbing the value associated with that very click. Data('calc') in jQuery correlates to data-calc="1".
 // Uses a click handler to output the number 1 when the button 1 is clicked
-// debugger;
+
+  // let num1 = 1;
+  // let num2 = 2;
+  // let operator= "+"
+
+  
+//possible error:  only works if num 1 and num2 are already entered
   $(".calcbutton").click(function(event) {
     var clickedNumber = $(this).text();
+
+    if ((clickedNumber === "+") || (clickedNumber === "-") || (clickedNumber ==="/") || (clickedNumber ==="*")) {
+      if (clickedNumber) === "+" {
+        add(num1, num2)
+      }
+    } else {
+    firstNum.push(clickedNumber);
+    console.log((firstNum).join(""));
+
     var displayNumber = calculatorDisplay.val() + clickedNumber;
-    console.log(displayNumber);
-    // alert(`${calculatorDisplay.val()} + ${clickedNumber}`)
     calculatorDisplay.val(displayNumber);
+    }
   });
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // $(".operandbutton").click(function(event) {
   //   var clickedOperand = $(this).text();
@@ -57,16 +103,16 @@ $(document).ready(function() {
   //   calculatorDisplay.val(displayNumber);
   // })
 
-  $(".operatorbutton").click(function(event) {
-    var clickedOperator = $(this).text();
-    var displayOperator = calculatorDisplay.val() + clickedOperator;
-    console.log(displayOperator);
-    calculatorDisplay.val(displayOperator);
-  })
+  // $(".operatorbutton").click(function(event) {
+  //   var clickedOperator = $(this).text();
+  //   var displayOperator = calculatorDisplay.val() + clickedOperator;
+  //   console.log(displayOperator);
+  //   calculatorDisplay.val(displayOperator);
+  // })
 
-  $("#clear").click(function(event) {
-    document.getElementById("calculator-form").reset();
-  })
+  // $("#clear").click(function(event) {
+  //   document.getElementById("calculator-form").reset();
+  // })
 
 
 
@@ -77,7 +123,3 @@ $(document).ready(function() {
 // Next implementation is getting the backend functionality of the calculator to actually work. To do this, I need to save
 // save each number entered as a string then concatenate it. Keep concenating, until an operator function is clicked.
 // At that
-
-
-
-});
