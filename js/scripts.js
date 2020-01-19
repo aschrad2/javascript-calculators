@@ -58,14 +58,12 @@ $(document).ready(function() {
   // let operator= "+"
 
   
-//possible error:  only works if num 1 and num2 are already entered
+
   $(".calcbutton").click(function(event) {
     var clickedNumber = $(this).text();
 
     if ((clickedNumber === "+") || (clickedNumber === "-") || (clickedNumber ==="/") || (clickedNumber ==="*")) {
-      if (clickedNumber) === "+" {
-        add(num1, num2)
-      }
+      console.log("hello world");
     } else {
     firstNum.push(clickedNumber);
     console.log((firstNum).join(""));
